@@ -1,14 +1,14 @@
 #!/bin/sh
 
 # setup influx
-sh Container_InfluxDB/run.sh
+sh Container_influxdb/run.sh
 
 # setup grafana
-sh Container_Grafana/run.sh
+sh Container_grafana/run.sh
 
 # setup mongo
-sh Container_MongoDB/run.sh
+sh Container_mongodb/run.sh
 
 # setup webapp_one
-sh Container_WebApp_One/build.sh
-sh Container_WebApp_One/run.sh 1
+sh Container_webapp_one/build.sh
+sh Container_webapp_one/run.sh 1 8888
