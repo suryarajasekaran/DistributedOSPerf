@@ -4,6 +4,7 @@
 sh Container_influxdb/run.sh
 
 # setup database for metrics
+sleep 5 # sleep for 5secs before attempting to create a database on influx
 curl -X POST 'http://localhost:8086/query?pretty=true'  --data-urlencode "q=CREATE DATABASE metrics"
 # curl -G 'http://localhost:8086/query?pretty=true'  --data-urlencode "q=SHOW DATABASES"
 
