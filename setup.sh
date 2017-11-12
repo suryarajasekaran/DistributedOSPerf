@@ -3,6 +3,10 @@
 # setup influx
 sh Container_influxdb/run.sh
 
+# setup database for metrics
+curl -X POST 'http://localhost:8086/query?pretty=true'  --data-urlencode "q=CREATE DATABASE metrics"
+# curl -G 'http://localhost:8086/query?pretty=true'  --data-urlencode "q=SHOW DATABASES"
+
 # setup grafana
 sh Container_grafana/run.sh
 
