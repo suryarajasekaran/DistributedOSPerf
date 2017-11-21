@@ -21,5 +21,5 @@ def scaledown(webapp_name):
     output = subprocess.check_output(["docker", "ps", "--format", "\"{{.Names}}\"", "-f", "name=" + webapp_name])
     output_list = output.split("\n")
     scale_number = len(output_list)
-    if scale_number <= 0:
+    if scale_number >= 0:
         subprocess.check_output(["sh", os.path.dirname(os.path.dirname(os.path.realpath(__file__))) + "/Container_"+webapp_name+"/delete.sh", str(scale_number-1)])
