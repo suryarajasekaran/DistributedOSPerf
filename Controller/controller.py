@@ -1,6 +1,7 @@
-from Scale import scaleup, scaledown
-
-a = 1;
+from Monitor import webapp_monitor
+import time
 if __name__ == '__main__':
-    #scaleup("webapp_one")
-    scaledown("webapp_one")
+    while (True):
+        webapp_monitor(webapp_name="webapp_one")
+        time.sleep(10)
+

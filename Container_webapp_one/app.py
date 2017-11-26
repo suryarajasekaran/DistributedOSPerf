@@ -5,11 +5,11 @@ from flask import Flask
 app = Flask(__name__)
 
 # hello is a function with route on /test
-@app.route("/test1")
+@app.route("/test")
 def test():
     return "Hello World!"
 
 # main function, entry point
 if __name__ == "__main__":
     # invokes app and runs the application
-    app.run(host="0.0.0.0", port=8881)
+    app.run(host="0.0.0.0", port=8888)
