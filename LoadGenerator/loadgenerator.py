@@ -8,17 +8,17 @@ if __name__ == '__main__':
 
             p_list = []
 
-            #p = Process(target=parallel_induce_load_endpoint, args=("webapp_one", 30))
+            p = Process(target=parallel_induce_load_endpoint, args=("webapp_one", 30))
+            p.start()
+            p_list.append(p)
+
+            #p = Process(target=parallel_induce_load_endpoint, args=("webapp_two", 30))
             #p.start()
             #p_list.append(p)
 
-            p = Process(target=parallel_induce_load_endpoint, args=("webapp_two", 30))
-            p.start()
-            p_list.append(p)
-
-            p = Process(target=parallel_induce_load_endpoint, args=("webapp_three", 30))
-            p.start()
-            p_list.append(p)
+            #p = Process(target=parallel_induce_load_endpoint, args=("webapp_three", 30))
+            #p.start()
+            #p_list.append(p)
 
             #p = Process(target=parallel_induce_load_endpoint, args=("webapp_four", 30))
             #p.start()
