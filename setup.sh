@@ -1,13 +1,11 @@
 #!/bin/sh
 
 # setup influx
-sh Contai 1 5555ner_influxdb/run.sh
+sh Container_influxdb/run.sh
 
-# setup database for metrics
-sleep 5 # sleep for 5secs before attempting to create a database on influx
-curl -X POST 'http://localhost:8086/query?pretty=true'  --data-urlencode "q=CREATE DATABASE telegraf"
-# curl -G 'http://localhost:8086/query?pretty=true'  --data-urlencode "q=SHOW DATABASES"
-#ALTER RETENTION POLICY autogen ON telegraf DURATION 6h SHARD DURATION 1h
+# setup telegraf
+sh Container_telegraf/run.sh
+
 # setup grafana
 sh Container_grafana/run.sh
 

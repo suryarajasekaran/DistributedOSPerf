@@ -9,7 +9,7 @@ webapp_port_mapper_dict = {
                           }
 
 def scaleup(webapp_name):
-    print "This is a scaleup program"
+    print "This is a scaleup for "+str(webapp_name)
     output = subprocess.check_output(["docker", "ps", "--format", "\"{{.Names}}\"", "-f", "name="+webapp_name])
     output_list = output.split("\n")
     scale_number = len(output_list)
@@ -17,9 +17,9 @@ def scaleup(webapp_name):
 
 
 def scaledown(webapp_name):
-    print "This is a scaledown program"
     output = subprocess.check_output(["docker", "ps", "--format", "\"{{.Names}}\"", "-f", "name=" + webapp_name])
     output_list = output.split("\n")
     scale_number = len(output_list)
     if scale_number > 2:
+        print "This is a scaledown for " + str(webapp_name)
         subprocess.check_output(["sh", os.path.dirname(os.path.dirname(os.path.realpath(__file__))) + "/Container_"+webapp_name+"/delete.sh", str(scale_number-1)])

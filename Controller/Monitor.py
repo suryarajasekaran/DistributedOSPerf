@@ -21,5 +21,3 @@ def check_load_cpu(webapp_name):
     result = influxDBClient.query(query)
     output = result.raw["series"][0]["values"][0][1]
     return output
-
-print check_load("webapp_one")
