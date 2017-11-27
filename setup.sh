@@ -27,3 +27,6 @@ sh Container_webapp_three/run.sh 1 9999
 # setup webapp_four
 sh Container_webapp_four/build.sh
 sh Container_webapp_four/run.sh 1 5555
+
+# source venv
+source venv.sh
