@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # setup influx
-sh Container_influxdb/run.sh
+sh Contai 1 5555ner_influxdb/run.sh
 
 # setup database for metrics
 sleep 5 # sleep for 5secs before attempting to create a database on influx
@@ -22,10 +22,10 @@ sh Container_webapp_one/run.sh 1 8888
 sh Container_webapp_two/build.sh
 sh Container_webapp_two/run.sh 1 7777
 
-# setup webapp_two
+# setup webapp_three
 sh Container_webapp_three/build.sh
-sh Container_webapp_three/run.sh 1 6666
+sh Container_webapp_three/run.sh 1 9999
 
-# setup webapp_two
+# setup webapp_four
 sh Container_webapp_four/build.sh
 sh Container_webapp_four/run.sh 1 5555

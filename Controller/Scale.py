@@ -4,7 +4,7 @@ import os
 webapp_port_mapper_dict = {
                                 "webapp_one"    : 8888,
                                 "webapp_two"    : 7777,
-                                "webapp_three"  : 6666,
+                                "webapp_three"  : 9999,
                                 "webapp_four"   : 5555
                           }
 
